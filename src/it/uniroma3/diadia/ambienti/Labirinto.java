@@ -32,6 +32,7 @@ public class Labirinto {
 		Stanza aulaN10 = new Stanza("Aula N10");
 		Stanza laboratorio = new Stanza("Laboratorio Campus");
 		Stanza biblioteca = new Stanza("Biblioteca");
+		//StanzaBuia stanzaBuia = new StanzaBuia("stanza buia");
 
 		/* collega le stanze */
 		atrio.impostaStanzaAdiacente("nord", biblioteca);
@@ -46,6 +47,7 @@ public class Labirinto {
 		laboratorio.impostaStanzaAdiacente("est", atrio);
 		laboratorio.impostaStanzaAdiacente("ovest", aulaN11);
 		biblioteca.impostaStanzaAdiacente("sud", atrio);
+	
 
 		/* pone gli attrezzi nelle stanze */
 		aulaN10.addAttrezzo(lanterna);
