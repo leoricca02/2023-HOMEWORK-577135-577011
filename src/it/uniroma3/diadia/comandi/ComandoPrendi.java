@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.diadia.IO;
+import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
@@ -26,7 +27,7 @@ public class ComandoPrendi implements Comando {
 			this.io.mostraMessaggio("Quale attrezzo vuoi prendere?");
 		else {
 			Attrezzo toTakeAttrezzo = null;
-			toTakeAttrezzo = partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
+			toTakeAttrezzo = partita.getStanzaCorrente().attrezzi.get(nomeAttrezzo);
 			if (toTakeAttrezzo == null)
 				this.io.mostraMessaggio("Attrezzo inesistente");
 			else {

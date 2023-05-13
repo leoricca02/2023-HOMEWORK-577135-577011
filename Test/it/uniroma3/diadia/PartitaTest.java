@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
@@ -16,12 +18,13 @@ class PartitaTest {
 	private Stanza stanzaCorrente2;
 	private Stanza stanzaCorrente3;
 	private Stanza stanzaVincente;
+	private Labirinto labirinto;
 
 	@BeforeEach
 	public void setUp() {
-
+		this.labirinto = new LabirintoBuilder();
 		//inizializz partita
-		this.partita = new Partita();
+		this.partita = new Partita(labirinto);
 		//inizializzo giocatore
 		this.giocatore = new Giocatore();
 		//inizializzo le stanze

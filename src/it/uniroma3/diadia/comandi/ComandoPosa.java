@@ -27,7 +27,7 @@ public class ComandoPosa implements Comando {
 				this.io.mostraMessaggio("Attrezzo inesistente");
 			else {
 				if (partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo) != null)
-					partita.getStanzaCorrente().addAttrezzo(toDropAttrezzo);
+					partita.getStanzaCorrente().addAttrezzo(toDropAttrezzo.getNome(), toDropAttrezzo.getPeso());
 				this.io.mostraMessaggio("Attrezzo posato");
 			}
 		}

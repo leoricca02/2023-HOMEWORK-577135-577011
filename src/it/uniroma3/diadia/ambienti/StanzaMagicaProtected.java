@@ -20,17 +20,29 @@ public class StanzaMagicaProtected extends StanzaProtected {
 		this.sogliaMagica = soglia;
 	}
 	@Override
-	 public boolean addAttrezzo(Attrezzo attrezzo) {
-	 this.contatoreAttrezziPosati++;
-	 if (this.contatoreAttrezziPosati > this.sogliaMagica) 
-	 attrezzo = this.modificaAttrezzo(attrezzo);
-	 if (this.numeroAttrezzi<NUMERO_MASSIMO_ATTREZZI) { 
-	 this.attrezzi[this.numeroAttrezzi] = attrezzo;
-	 this.numeroAttrezzi++;
-	 return true;
+	public boolean addAttrezzo(Attrezzo attrezzo) {
+		this.contatoreAttrezziPosati++;
+		if (this.contatoreAttrezziPosati > this.sogliaMagica) {
+			attrezzo = this.modificaAttrezzo(attrezzo);
+	    }		
+		if (this.attrezzi.size()<NUMERO_MASSIMO_ATTREZZI) { 
+			return this.attrezzi.add(attrezzo); 
+		}
+		else return false;
 	}
-	else return false;
-	 }
+	
+	/*@Override
+	public boolean addAttrezzo(Attrezzo attrezzo) {
+		this.contatoreAttrezziPosati++;
+		if (this.contatoreAttrezziPosati > this.sogliaMagica) 
+			attrezzo = this.modificaAttrezzo(attrezzo);
+		if (this.numeroAttrezzi<NUMERO_MASSIMO_ATTREZZI) { 
+			this.attrezzi[this.numeroAttrezzi] = attrezzo;
+			this.numeroAttrezzi++;
+			return true;
+		}
+		else return false;
+	}*/
 
 	/*@Override
 	public boolean addAttrezzo(Attrezzo attrezzo) { 

@@ -19,11 +19,13 @@ public class StanzaMagica extends Stanza {
 	}
 
 	@Override
-	public boolean addAttrezzo(Attrezzo attrezzo) {
+	public boolean addAttrezzo(String nomeAttrezzo, int peso) {
 		this.contatoreAttrezziPosati++;
-		if (this.contatoreAttrezziPosati>this.sogliaMagica)
-			attrezzo = this.modificaAttrezzo(attrezzo);
-		return super.addAttrezzo(attrezzo);
+		Attrezzo att  = new Attrezzo(nomeAttrezzo, peso);
+		if (this.contatoreAttrezziPosati>this.sogliaMagica) {
+			att = this.modificaAttrezzo(att);
+		}	
+		return super.addAttrezzo(att.getNome(), att.getPeso());
 	}
 
 	public Attrezzo modificaAttrezzo(Attrezzo attrezzo) {

@@ -11,13 +11,11 @@ class StanzaBloccataTest {
 
 	private StanzaBloccata stanza1;
 	private Stanza stanza2;
-	private Attrezzo attrezzo;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		this.stanza1 = new StanzaBloccata("stanza bloccata");
+		this.stanza1 = new StanzaBloccata("stanza bloccata", "nord", "osso");
 		this.stanza2 = new Stanza("stanza normale");
-		this.attrezzo = new Attrezzo ("osso", 1);
 	}
 
 	@Test
@@ -35,8 +33,7 @@ class StanzaBloccataTest {
 	@Test
 	void testDirezioneBloccataConAttrezzo() {
 		this.stanza1.impostaStanzaAdiacente("nord", stanza2);
-		this.stanza1.addAttrezzo(attrezzo);
-		assertEquals(stanza2
-				, this.stanza1.getStanzaAdiacente("nord"));
+		this.stanza1.addAttrezzo("osso", 1);
+		assertEquals(stanza2, this.stanza1.getStanzaAdiacente("nord"));
 	}
 }

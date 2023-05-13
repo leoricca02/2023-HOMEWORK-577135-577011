@@ -1,12 +1,16 @@
 package it.uniroma3.diadia;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class IOSimulator implements IO {
-	String comandiLetti[];
+	List<String> comandiLetti;
 	private int indiceProxComando;
 	private IO io;
 	
-	public IOSimulator(String...comandiLetti) {
-		this.comandiLetti=comandiLetti;
+	public IOSimulator(List<String> comandiLetti) {
+		this.comandiLetti = new ArrayList<String>(comandiLetti);
 		this.indiceProxComando = 0;
 	}
 		
@@ -17,9 +21,9 @@ public class IOSimulator implements IO {
 
 	@Override
 	public String leggiRiga() {
-		if (this.comandiLetti.length == 0) {
+		if (this.comandiLetti.size() == 0) {
 			return null;
-		} else return this.comandiLetti[this.indiceProxComando++];
+		} else return this.comandiLetti.get(indiceProxComando++);
 	}
 
 }

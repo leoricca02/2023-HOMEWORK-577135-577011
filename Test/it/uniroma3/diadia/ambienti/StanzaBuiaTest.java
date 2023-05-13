@@ -9,13 +9,11 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 class StanzaBuiaTest {
 	
-	private Attrezzo attrezzo;
 	private StanzaBuia stanza;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		this.stanza = new StanzaBuia("stanza buia");
-		this.attrezzo = new Attrezzo("osso", 1);
+		this.stanza = new StanzaBuia("stanza buia", "osso");
 	}
 
 	@Test
@@ -26,7 +24,7 @@ class StanzaBuiaTest {
 	
 	@Test
 	void testConAttrezzoCercato() {
-		this.stanza.addAttrezzo(attrezzo);
+		this.stanza.addAttrezzo("osso", 1);
 		this.stanza.getDescrizione();
 		System.out.println(this.stanza.getDescrizione());
 	}

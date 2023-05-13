@@ -17,7 +17,7 @@ public class ComandoGuarda implements Comando {
 	@Override
 	public void esegui(Partita partita) {
 		this.io.mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
-		this.io.mostraMessaggio("Facciamo l'unboxing della tua borsa! " + partita.getGiocatore().getBorsa());
+		this.io.mostraMessaggio("Facciamo l'unboxing della tua borsa! " + partita.getGiocatore().getBorsa().getSortedSetOrdinatoPerPeso());
 		this.io.mostraMessaggio("Quanti cfu ti sono rimasti? " + partita.getGiocatore().getCfu() + "cfu");
 	}
 
