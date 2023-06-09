@@ -1,0 +1,11 @@
+Stanze:biblioteca,N10,N11,N12
+Uscite:Atrio nord biblioteca,biblioteca sud atrio,N11 sud atrio,atrio nord N11,N10 est atrio,atrio ovest N10
+Inizio:biblioteca
+Vincente:N11
+Attrezzi: osso 3 biblioteca, lanterna 4 biblioteca
+Mago: N10 Gandalf Fuggite sciocchi bastone
+Strega: atrio Pina hihihihi 
+Cane: N12 Fuffi WofWof
+Bloccata: 
+Magica:biblioteca
+Buia:N10 lanterna

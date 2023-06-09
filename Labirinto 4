@@ -1,0 +1,11 @@
+Stanze:atrio,biblioteca,N11,N10
+Uscite:Atrio nord biblioteca,biblioteca sud atrio,N11 sud atrio,atrio nord N11,N10 est atrio,atrio ovest N10
+Inizio:atrio
+Vincente:biblioteca
+Attrezzi:teaser 8 biblioteca
+Mago:
+Strega: atrio Pina hihihihi 
+Cane:
+Bloccata: 
+Magica:
+Buia:
