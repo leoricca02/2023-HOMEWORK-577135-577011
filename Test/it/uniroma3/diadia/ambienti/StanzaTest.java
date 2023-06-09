@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
+
 class StanzaTest {
 
 	private Stanza stanzaPiena;
@@ -124,8 +125,8 @@ class StanzaTest {
 	//get attrezzo semipiena attrezzo presente
 	@Test
 	final void testGetAttrezzoStanzaSemiPienaAttrezzoPresente() {
-		Attrezzo att = new Attrezzo("osso", 1);
-		assertEquals(att, this.stanzaSemiPiena.attrezzi.get("osso"));
+		Attrezzo attrezzo = new Attrezzo("osso",1);
+		assertEquals(attrezzo, this.stanzaSemiPiena.attrezzi.get("osso"));
 	}
 
 	//get attrezzo semipiena attrezzo non presente
@@ -133,4 +134,4 @@ class StanzaTest {
 	final void testGetAttrezzoStanzaSemiPienaAttrezzoNonPresente() {
 		assertEquals(null, this.stanzaSemiPiena.attrezzi.get("tree"));
 	}
-}	
+}

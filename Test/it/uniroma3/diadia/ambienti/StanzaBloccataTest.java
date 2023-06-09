@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 class StanzaBloccataTest {
 
@@ -13,7 +12,7 @@ class StanzaBloccataTest {
 	private Stanza stanza2;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
 		this.stanza1 = new StanzaBloccata("stanza bloccata", "nord", "osso");
 		this.stanza2 = new Stanza("stanza normale");
 	}
@@ -23,7 +22,7 @@ class StanzaBloccataTest {
 		this.stanza1.impostaStanzaAdiacente("sud", stanza2);
 		assertEquals(stanza2, this.stanza1.getStanzaAdiacente("sud"));
 	}
-
+	
 	@Test
 	void testDirezioneBloccataSenzaAttrezzo() {
 		this.stanza1.impostaStanzaAdiacente("nord", stanza2);
@@ -33,7 +32,8 @@ class StanzaBloccataTest {
 	@Test
 	void testDirezioneBloccataConAttrezzo() {
 		this.stanza1.impostaStanzaAdiacente("nord", stanza2);
-		this.stanza1.addAttrezzo("osso", 1);
+		this.stanza1.addAttrezzo("osso",1);
 		assertEquals(stanza2, this.stanza1.getStanzaAdiacente("nord"));
 	}
+
 }

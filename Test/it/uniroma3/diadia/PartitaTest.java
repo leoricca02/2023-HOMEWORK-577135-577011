@@ -1,12 +1,12 @@
 package it.uniroma3.diadia;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.uniroma3.diadia.ambienti.Labirinto;
-import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
@@ -22,7 +22,7 @@ class PartitaTest {
 
 	@BeforeEach
 	public void setUp() {
-		this.labirinto = new LabirintoBuilder();
+
 		//inizializz partita
 		this.partita = new Partita(labirinto);
 		//inizializzo giocatore
@@ -94,15 +94,15 @@ class PartitaTest {
 		this.partita.vinta();
 		assertFalse(this.partita.isFinita());
 	}
-
+	
 	//isFinita con il metodo vinta che ritorna true e con cfu del giocatore > 0
-	@Test
-	final void testIsFinita() {
-		this.partita.setStanzaCorrente(stanzaVincente);
-		this.partita.setStanzaVincente(stanzaVincente);
-		this.partita.vinta();
-		this.giocatore.setCfu(1);
-		assertTrue(this.partita.isFinita());
-	}
+		@Test
+		final void testIsFinita() {
+			this.partita.setStanzaCorrente(stanzaVincente);
+			this.partita.setStanzaVincente(stanzaVincente);
+			this.partita.vinta();
+			this.giocatore.setCfu(1);
+			assertTrue(this.partita.isFinita());
+		}
 
 }

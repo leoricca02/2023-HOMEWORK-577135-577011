@@ -1,50 +1,54 @@
 package it.uniroma3.diadia;
-import it.uniroma3.diadia.ambienti.Stanza;
-import it.uniroma3.diadia.giocatore.*;
+
 import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.giocatore.Giocatore;
 
 /**
  * Questa classe modella una partita del gioco
  *
- * @author  docente di POO e Leonardo Ricca --> matricola 577011
+ * @author  docente di POO e 577135
  * @see Labirinto
  * @version 2.0
  */
 
 public class Partita {
-
+	
+	@SuppressWarnings("unused")
+	private Labirinto labirinto;
+	private Giocatore giocatore;
 	private Stanza stanzaCorrente;
 	private Stanza stanzaVincente;
 	private boolean finita;
-	private Labirinto labirinto;
-	private Giocatore giocatore;
 
-	public Partita(Labirinto labirinto){
+	
+	public Partita(Labirinto labirinto) {
 		this.labirinto = labirinto;
 		this.giocatore = new Giocatore();
 		this.finita = false;
-		this.stanzaCorrente=this.labirinto.getStanzaIniziale();
-		this.stanzaVincente=this.labirinto.getStanzaFinale();
 	}
-
+	
+	public Giocatore getGiocatore() {
+		return giocatore;
+	}
 	public Stanza getStanzaVincente() {
 		return stanzaVincente;
-	}
-
-	public Stanza getStanzaCorrente() {
-		return this.stanzaCorrente;
-	}
-	public void setStanzaCorrente(Stanza stanzaCorrente) {
-		this.stanzaCorrente = stanzaCorrente;
 	}
 	public void setStanzaVincente(Stanza stanzaVincente) {
 		this.stanzaVincente = stanzaVincente;
 	}
 
-	public Giocatore getGiocatore() {
-		return giocatore;
+	public void setStanzaCorrente(Stanza stanzaCorrente) {
+		this.stanzaCorrente = stanzaCorrente;
 	}
 
+	public Stanza getStanzaCorrente() {
+		return this.stanzaCorrente;
+	}
+	public void setLabirinto(Labirinto labirinto) {
+		this.labirinto = labirinto;
+	}
+	
 	/**
 	 * Restituisce vero se e solo se la partita e' stata vinta
 	 * @return vero se partita vinta
@@ -58,7 +62,7 @@ public class Partita {
 	 * @return vero se partita finita
 	 */
 	public boolean isFinita() {
-		return finita || vinta() || (giocatore.getCfu() == 0);
+		return finita || vinta() || (this.giocatore.getCfu() == 0);
 	}
 
 	/**
@@ -67,10 +71,5 @@ public class Partita {
 	 */
 	public void setFinita() {
 		this.finita = true;
-	}	
-	
-	//metodo che imposta il labirinto usato nella partita
-	public void setLabirinto(Labirinto labirinto) {
-		this.labirinto = labirinto;
 	}
 }

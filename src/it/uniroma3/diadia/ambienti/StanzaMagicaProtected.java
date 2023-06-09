@@ -19,39 +19,30 @@ public class StanzaMagicaProtected extends StanzaProtected {
 		this.contatoreAttrezziPosati = 0;
 		this.sogliaMagica = soglia;
 	}
+
 	@Override
-	public boolean addAttrezzo(Attrezzo attrezzo) {
-		this.contatoreAttrezziPosati++;
-		if (this.contatoreAttrezziPosati > this.sogliaMagica) {
-			attrezzo = this.modificaAttrezzo(attrezzo);
-	    }		
-		if (this.attrezzi.size()<NUMERO_MASSIMO_ATTREZZI) { 
-			return this.attrezzi.add(attrezzo); 
-		}
-		else return false;
-	}
-	
-	/*@Override
 	public boolean addAttrezzo(Attrezzo attrezzo) {
 		this.contatoreAttrezziPosati++;
 		if (this.contatoreAttrezziPosati > this.sogliaMagica) 
 			attrezzo = this.modificaAttrezzo(attrezzo);
-		if (this.numeroAttrezzi<NUMERO_MASSIMO_ATTREZZI) { 
+		if(this.attrezzi.size()<NUMERO_MASSIMO_ATTREZZI) {
+			return this.attrezzi.add(attrezzo);
+		/*if (this.numeroAttrezzi<this.attrezzi.length) { 
 			this.attrezzi[this.numeroAttrezzi] = attrezzo;
 			this.numeroAttrezzi++;
-			return true;
+			return true;*/
 		}
 		else return false;
-	}*/
+	}
 
 	/*@Override
 	public boolean addAttrezzo(Attrezzo attrezzo) { 
 		this.contatoreAttrezziPosati++;
-		if (this.contatoreAttrezziPosati>this.sogliaMagica) 
-			attrezzo = this.modificaAttrezzo(attrezzo);
-		return super.addAttrezzo(attrezzo);
-	}*/
-
+		 if (this.contatoreAttrezziPosati>this.sogliaMagica) 
+		 attrezzo = this.modificaAttrezzo(attrezzo);
+		 return super.addAttrezzo(attrezzo);
+	}
+	 */
 	private Attrezzo modificaAttrezzo(Attrezzo attrezzo) {
 		StringBuilder nomeInvertito;
 		int pesoX2 = attrezzo.getPeso() * 2;

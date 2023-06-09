@@ -3,15 +3,17 @@ package it.uniroma3.diadia.ambienti;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class StanzaMagica extends Stanza {
+
 	final static public int SOGLIA_MAGICA_DEFAULT = 3;
 	private int contatoreAttrezziPosati;
 	private int sogliaMagica;
-	
+
 	public StanzaMagica(String nome) {
 		this(nome, SOGLIA_MAGICA_DEFAULT);
 	}
-	
-	 //il costruttoe più generale
+	/*
+	 * Most general constructor
+	 */
 	public StanzaMagica(String nome, int soglia) {
 		super(nome);
 		this.contatoreAttrezziPosati = 0;
@@ -19,21 +21,22 @@ public class StanzaMagica extends Stanza {
 	}
 
 	@Override
-	public boolean addAttrezzo(String nomeAttrezzo, int peso) {
+	public boolean addAttrezzo(String nomeAtt, int pesoAtt) { 
 		this.contatoreAttrezziPosati++;
-		Attrezzo att  = new Attrezzo(nomeAttrezzo, peso);
+		Attrezzo attrezzo = new Attrezzo(nomeAtt, pesoAtt);
 		if (this.contatoreAttrezziPosati>this.sogliaMagica) {
-			att = this.modificaAttrezzo(att);
-		}	
-		return super.addAttrezzo(att.getNome(), att.getPeso());
+			attrezzo = this.modificaAttrezzo(attrezzo);
+		}
+		return super.addAttrezzo(attrezzo.getNome(), attrezzo.getPeso());
 	}
 
-	public Attrezzo modificaAttrezzo(Attrezzo attrezzo) {
+	private Attrezzo modificaAttrezzo(Attrezzo attrezzo) {
 		StringBuilder nomeInvertito;
 		int pesoX2 = attrezzo.getPeso() * 2;
 		nomeInvertito = new StringBuilder(attrezzo.getNome());
 		nomeInvertito = nomeInvertito.reverse();
-		attrezzo = new Attrezzo(nomeInvertito.toString(),pesoX2);
+		attrezzo = new Attrezzo(nomeInvertito.toString(),
+				pesoX2);
 		return attrezzo;
 	}
 }
